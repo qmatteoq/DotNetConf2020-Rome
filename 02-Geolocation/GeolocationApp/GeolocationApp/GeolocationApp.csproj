@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <RestoreSources>
+      https://api.nuget.org/v3/index.json;
+      ../../GeolocationComponent/GeolocationProjection/nuget;
+    </RestoreSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VCRTForwarders.140" Version="1.0.6" />
+    <PackageReference Include="GeolocationComponent" Version="0.2.0-prerelease" />
+  </ItemGroup>
+
+</Project>

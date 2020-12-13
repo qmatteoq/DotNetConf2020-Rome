@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  IgnorableNamespaces="uap mp rescap">
+
+  <Identity
+    Name="PlaneIdentifier"
+    Publisher="CN=Matteo Pagani, O=Matteo Pagani, L=Como, S=Como, C=IT"
+    Version="1.1.0.0" />
+
+  <Properties>
+    <DisplayName>Plane Identifier</DisplayName>
+    <PublisherDisplayName>Matteo Pagani</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+<Application Id="App"
+  Executable="$targetnametoken$.exe"
+  EntryPoint="$targetentrypoint$">
+  <uap3:VisualElements
+    AppListEntry="default"
+    DisplayName="Plane Identifier"
+    Description="Plane Identifier"
+    BackgroundColor="transparent"
+    Square150x150Logo="Images\Square150x150Logo.png"
+    Square44x44Logo="Images\Square44x44Logo.png"
+    VisualGroup="MyAppSuite">
+    <uap:DefaultTile
+      Wide310x150Logo="Images\Wide310x150Logo.png" />
+  </uap3:VisualElements>
+</Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>

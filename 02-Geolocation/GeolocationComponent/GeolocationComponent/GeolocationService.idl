@@ -1,0 +1,10 @@
+namespace GeolocationComponent
+{
+	[default_interface]
+	runtimeclass GeolocationService
+	{
+		GeolocationService();
+		Windows.Foundation.IAsyncOperation<double> GetLatitude();
+		Windows.Foundation.IAsyncOperation<double> GetLongitude();
+	}
+}

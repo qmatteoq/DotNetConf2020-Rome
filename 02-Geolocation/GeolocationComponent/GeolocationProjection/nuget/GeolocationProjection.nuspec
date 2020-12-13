@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+	<metadata>
+		<id>GeolocationComponent</id>
+		<version>0.2.0-prerelease</version>
+		<authors>Matteo Pagani</authors>
+		<description>A simple component to get the location of the user</description>
+		<dependencies>
+			<group targetFramework=".NETCoreApp3.0" />
+			<group targetFramework="UAP10.0" />
+			<group targetFramework=".NETFramework4.6" />
+			<group targetFramework="net5.0">
+				<dependency id="Microsoft.Windows.CsWinRT" version="1.0.1" exclude="Build,Analyzers" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<!--Support net46+, netcore3, net5, uap, c++ -->
+		<file src="..\..\_build\x64\Debug\GeolocationComponent\bin\GeolocationComponent\GeolocationComponent.winmd" target="lib\netcoreapp3.0\GeolocationComponent.winmd" />
+		<file src="..\..\_build\x64\Debug\GeolocationComponent\bin\GeolocationComponent\GeolocationComponent.winmd" target="lib\uap10.0\GeolocationComponent.winmd" />
+		<file src="..\..\_build\x64\Debug\GeolocationComponent\bin\GeolocationComponent\GeolocationComponent.winmd" target="lib\net46\GeolocationComponent.winmd" />
+		<file src="..\..\_build\x64\Debug\GeolocationProjection\bin\GeolocationProjection.dll" target="lib\net5.0\GeolocationProjection.dll" />
+		<file src="..\..\_build\x64\Debug\GeolocationComponent\bin\GeolocationComponent\GeolocationComponent.dll" target="runtimes\win10-x64\native\GeolocationComponent.dll" />
+	</files>
+</package>

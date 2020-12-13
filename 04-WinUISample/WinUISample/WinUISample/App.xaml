@@ -1,0 +1,51 @@
+﻿<Application
+  x:Class="WinUISample.App"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:viewModels="using:WinUISample.ViewModels">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <ResourceDictionary Source="Styles/Custom.xaml" />
+                <!-- Other merged dictionaries here -->
+            </ResourceDictionary.MergedDictionaries>
+            
+            <!-- Other app resources here -->
+            <DataTemplate x:Key="GridTemplate">
+                <Grid>
+                    <Image x:Name="TopImage" Source="{Binding Images.Poster}" Width="200"></Image>
+                </Grid>
+            </DataTemplate>
+
+            <DataTemplate x:Key="ListTemplate">
+                <Grid Width="400">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="{Binding Images.Poster}" Grid.Column="0" x:Name="TopImage" />
+                    <StackPanel Grid.Column="1" Margin="12, 0, 0, 0" VerticalAlignment="Top">
+                        <TextBlock Text="{Binding Name}" FontSize="18" Foreground="#58666e" FontWeight="SemiBold" />
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Runtime: " FontSize="14" Foreground="#58666e" />
+                            <TextBlock Text="{Binding Runtime}" FontSize="14" Foreground="#98a6ad" Margin="5, 0, 0, 0" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Country: " FontSize="14" Foreground="#58666e" />
+                            <TextBlock Text="{Binding Country}" FontSize="14" Foreground="#98a6ad" Margin="5, 0, 0, 0" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Network: " FontSize="14" Foreground="#58666e" />
+                            <TextBlock Text="{Binding Network}" FontSize="14" Foreground="#98a6ad" Margin="5, 0, 0, 0" />
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+
+            <viewModels:MainPageViewModel x:Key="MainPageViewModel" />
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
